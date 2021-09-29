@@ -6,6 +6,8 @@ var output = document.querySelector("#output");
 
 var apikey = "ed314dda4cb8d8cc10a08799a0560276";
 
+const proxy = 'https://cors-anywhere.herokuapp.com/corsdemo'
+
 window.addEventListener("load", function () {
   let lat, long;
   if (navigator.geolocation) {
@@ -13,7 +15,7 @@ window.addEventListener("load", function () {
       lat = position.coords.latitude;
       long = position.coords.longitude;
 
-      var api =
+      var api =proxy+
         "http://api.openweathermap.org/data/2.5/weather?lat=23.0685713&lon=70.1110318&appid=" +
         apikey;
 
@@ -32,7 +34,7 @@ window.addEventListener("load", function () {
 });
 
 btn.addEventListener("click", function () {
-  var url =
+  var url =proxy+
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     city.value +
     "&appid=" +
