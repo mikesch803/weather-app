@@ -6,6 +6,8 @@ var output = document.querySelector("#output");
 
 var apikey = "ed314dda4cb8d8cc10a08799a0560276";
 
+var a;
+
 window.addEventListener("load", function () {
   let lat, long;
   if (navigator.geolocation) {
