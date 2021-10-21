@@ -4,7 +4,19 @@ var btn = document.querySelector(".check-btn");
 
 var output = document.querySelector("#output");
 
+var body = document.querySelector('body');
+
+var themeBtn = document.querySelector('#switch');
+
 var apikey = "ed314dda4cb8d8cc10a08799a0560276";
+
+themeBtn.addEventListener('change', function(){
+  var element = document.querySelector('.app');
+  console.log('dfjh')
+  element.classList.toggle('dark-mode');
+})
+
+
 
 window.addEventListener("load", function () {
   let lat, long;
@@ -23,9 +35,10 @@ window.addEventListener("load", function () {
           //console.log(data);
           const tempInKelvin = data.main.temp_max;
           const tempInCelsius = (tempInKelvin - 273.15).toFixed(0);
-          output.innerHTML = `<h1>temp is ${tempInCelsius} C in ${data.name} </h1>
-                                <h2>${data.weather[0].description}</h2>
-                                <p>wind's speed ${data.wind.speed} km/h</p>`;
+          output.innerHTML = `<h1 style="padding:0; display:flex; align-items:center; justify-content: center; font-size:3rem; margin:0 auto">${tempInCelsius} <span style="font-size:small">C</span></h1>
+                               <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start" >${data.name}</h2>
+                                <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start">${data.weather[0].description}</h2>
+                                <p style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start; font-weight: bold;">wind's speed ${data.wind.speed} km/h</p>`;
         });
     });
   }
@@ -43,8 +56,9 @@ btn.addEventListener("click", function () {
     .then((data) => {
         const tempInKelvin = data.main.temp_max;
         const tempInCelsius = (tempInKelvin - 273.15).toFixed(0);
-        output.innerHTML = `<h1>temp is ${tempInCelsius} C in ${data.name} </h1>
-                              <h2>${data.weather[0].description}</h2>
-                              <p>wind's speed ${data.wind.speed} km/h</p>`;
+        output.innerHTML = `<h1 style="padding:0; display:flex; align-items:center; justify-content: center; font-size:3rem; margin:0 auto">${tempInCelsius} <span style="font-size:small">C</span></h1>
+                               <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start" >${data.name}</h2>
+                                <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start">${data.weather[0].description}</h2>
+                                <p style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start; font-weight: bold;">wind's speed ${data.wind.speed} km/h</p>`;
     });
 });

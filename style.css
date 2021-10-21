@@ -1,0 +1,158 @@
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+body {
+  width: 350px;
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.app {
+  background-image: linear-gradient(#FDC830, #F37335);
+  border-radius: 5px;
+}
+
+.heading{
+  justify-content: space-between;
+  display: flex;
+  padding: 1rem;
+  margin: 0;
+}
+
+
+.dark-mode {
+  color:white;
+  background-image: linear-gradient(#000, #000);
+}
+
+
+label {
+  display: flex;
+  width: 75px;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  background: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+label i {
+  font-size: 18px;
+}
+label .fa-sun {
+  color: gold;
+  transition: 0.8s;
+}
+label .fa-moon {
+  color: #fff;
+  transition: 0.8s;
+}
+label .ball {
+  display: none;
+}
+
+#switch:checked + label .fa-sun {
+  transform: translateX(-43px);
+}
+#switch:checked + label .fa-moon {
+  transform: translateX(43px);
+}
+
+label .fa-sun {
+  opacity: 1;
+}
+#switch:checked + label .fa-sun {
+  opacity: 0;
+}
+label .fa-moon {
+  opacity: 0;
+}
+#switch:checked + label .fa-moon {
+  opacity: 1;
+}
+
+label .ball {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 5px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+#switch:checked + label .ball {
+  transform: translateX(40px);
+}
+
+label .fa-moon {
+  transform: translateX(43px);
+}
+#switch:checked + label .fa-moon {
+  transform: translateX(0);
+}
+
+label {
+  transition: 0.3s;
+}
+#switch:checked + label {
+  background: #c0c0c0;
+}
+#switch:checked + label .ball {
+  background: #222;
+}
+#switch {
+  display: none;
+}
+
+#switch:checked + label .fa-sun {
+  transform: translateX(-43px) rotate(160deg);
+}
+label .fa-moon {
+  transform: translateX(43px) rotate(250deg);
+}
+#switch:checked + label .fa-moon {
+  transform: translateX(0), rotate(0);
+}
+
+#city-name {
+  border: none;
+  border-bottom: 1px solid black;
+  /* margin: 1rem; */
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#switch-container {
+  padding: 1rem;
+}
+
+.check-btn {
+  background-color: #F37335;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
+#c {
+  color: red;
+}
