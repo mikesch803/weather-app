@@ -10,6 +10,7 @@ var themeBtn = document.querySelector('#switch');
 
 var apikey = "ed314dda4cb8d8cc10a08799a0560276";
 
+<<<<<<< HEAD
 themeBtn.addEventListener('change', function(){
   var element = document.querySelector('.app');
   console.log('dfjh')
@@ -17,6 +18,9 @@ themeBtn.addEventListener('change', function(){
 })
 
 
+=======
+var a;
+>>>>>>> 2373f6ad2440772bc441ed1fe8d0a9c2b10200c9
 
 window.addEventListener("load", function () {
   let lat, long;
