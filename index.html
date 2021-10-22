@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-        <div class = 'app'>
+    <div class='app'>
         <div class="heading">
-    <h1>Weather App</h1>
-    <div id="switch-container">
-        <input type="checkbox" id="switch">
-        <label for="switch">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-          <span class="ball"></span>
-        </label>
-      </div>
+            <h1>Weather App</h1>
+            <div id="switch-container">
+                <input type="checkbox" id="switch">
+                <label for="switch">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+        <input type="text" id="city-name" placeholder="enter the city">
+        <button class="check-btn" type="submit">show</button>
+        <div id="output"></div>
     </div>
-    <input type="text" id="city-name" placeholder="enter the city">   
-    <button class="check-btn" type="submit">show</button>
-    <div id="output"></div>
-</div>
     <script src="app.js"></script>
 </body>
 

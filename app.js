@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
       lat = position.coords.latitude;
       long = position.coords.longitude;
       var api =
-        "https://api.openweathermap.org/data/2.5/weather?lat=23.0685713&lon=70.1110318&appid=" +
+        "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=" +
         apikey;
         fetchAPI(api);  
     });
