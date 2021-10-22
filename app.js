@@ -15,6 +15,18 @@ themeBtn.addEventListener('change', function(){
   element.classList.toggle('dark-mode');
 })
 
+function fetchAPI(api){
+return fetch(api)
+.then((response) => response.json())
+.then((data) => {
+  const tempInKelvin = data.main.temp_max;
+  const tempInCelsius = (tempInKelvin - 273.15).toFixed(0);
+  output.innerHTML = `<h1 id='temp-degree'>${tempInCelsius} <span id='temp-c'>C</span></h1>
+                       <h2 id='temp-city'>${data.name}</h2>
+                        <h2 id='city-condn'>${data.weather[0].description}</h2>
+                        <p id='wind-speed' >wind's speed ${data.wind.speed} km/h</p>`;
+});
+}
 
 
 window.addEventListener("load", function () {
@@ -23,22 +35,10 @@ window.addEventListener("load", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
       lat = position.coords.latitude;
       long = position.coords.longitude;
-
       var api =
         "https://api.openweathermap.org/data/2.5/weather?lat=23.0685713&lon=70.1110318&appid=" +
         apikey;
-
-      fetch(api)
-        .then((response) => response.json())
-        .then((data) => {
-          //console.log(data);
-          const tempInKelvin = data.main.temp_max;
-          const tempInCelsius = (tempInKelvin - 273.15).toFixed(0);
-          output.innerHTML = `<h1 style="padding:0; display:flex; align-items:center; justify-content: center; font-size:3rem; margin:0 auto">${tempInCelsius} <span style="font-size:small">C</span></h1>
-                               <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start" >${data.name}</h2>
-                                <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start">${data.weather[0].description}</h2>
-                                <p style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start; font-weight: bold;">wind's speed ${data.wind.speed} km/h</p>`;
-        });
+        fetchAPI(api);  
     });
   }
 });
@@ -49,15 +49,5 @@ btn.addEventListener("click", function () {
     city.value +
     "&appid=" +
     apikey;
-  console.log(url);
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-        const tempInKelvin = data.main.temp_max;
-        const tempInCelsius = (tempInKelvin - 273.15).toFixed(0);
-        output.innerHTML = `<h1 style="padding:0; display:flex; align-items:center; justify-content: center; font-size:3rem; margin:0 auto">${tempInCelsius} <span style="font-size:small">C</span></h1>
-                               <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start" >${data.name}</h2>
-                                <h2 style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start">${data.weather[0].description}</h2>
-                                <p style="display:flex; align-items:center; justify-content: center; font-size:1rem; align-items: flex-start; font-weight: bold;">wind's speed ${data.wind.speed} km/h</p>`;
-    });
+  fetchAPI(url);
 });

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
 * {
-  /* margin: 0;
-  padding: 0; */
   box-sizing: border-box;
 }
 
@@ -12,7 +10,6 @@ body {
   margin: 10rem auto;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -27,7 +24,6 @@ body {
   padding: 1rem;
   margin: 0;
 }
-
 
 .dark-mode {
   color:white;
@@ -132,11 +128,11 @@ label .fa-moon {
 #city-name {
   border: none;
   border-bottom: 1px solid black;
-  /* margin: 1rem; */
   display: flex;
   margin: auto;
   align-items: center;
-  justify-content: center;
+  justify-content: cente
+  r;
 }
 
 #switch-container {
@@ -156,6 +152,33 @@ label .fa-moon {
   margin: 0.5rem auto;
 }
 
+
 #c {
   color: red;
+}
+
+
+#temp-c{
+  font-size:small
+}
+
+#temp-city, #city-condn, #wind-speed  {
+  display:flex; 
+  align-items:center; 
+  justify-content: center; 
+  font-size:1rem; 
+  align-items: flex-start;
+}
+
+#wind-speed {
+  font-weight: bold;
+}
+
+#temp-degree {
+  padding:0; 
+  display:flex; 
+  align-items:center; 
+  justify-content: center; 
+  font-size:3rem; 
+  margin:0 auto
 }
