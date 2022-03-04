@@ -28,7 +28,7 @@ return fetch(api)
 });
 }
 
-
+/**when browser gets loads */
 window.addEventListener("load", function () {
   let lat, long;
   if (navigator.geolocation) {
